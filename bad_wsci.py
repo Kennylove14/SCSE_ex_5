@@ -28,3 +28,12 @@ print(
 )
 
 ## Print the response from Qwen
+response = chat(
+    model="qwen",
+    messages=[
+        {"role": "system", "content": f"Answer the user's question using only the information from the provided context:\n\n{context}"},
+        {"role": "user", "content": question}
+    ]
+)
+
+print(response.message.content)
